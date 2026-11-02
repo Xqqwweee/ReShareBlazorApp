@@ -1,8 +1,21 @@
 ﻿@page "/login"
 @rendermode InteractiveServer
 @inject NavigationManager NavigationManager
-<h3>LoginPage</h3>
-<button class="btn btn-primary" @onclick='() => NavigationManager.NavigateTo("/login")'>Login</button>
+
+<div class="login-container">
+    <div class="login-card">
+
+        <h2>Witaj ponownie!</h2>
+
+        <p>Zaloguj się do swojego konta ReShare.</p>
+
+        <button class="login-button"
+                @onclick='() => NavigationManager.NavigateTo("/register")'>
+            Utwórz konto
+        </button>
+
+    </div>
+</div>
 
 @code {
 

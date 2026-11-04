@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ReShareBlazorApp.Models
+namespace ReShareBlazorApp.Web.Models
 {
     public class RegisterModel
     {

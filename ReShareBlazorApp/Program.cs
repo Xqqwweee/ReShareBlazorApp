@@ -1,4 +1,4 @@
-using ReShareBlazorApp.Components;
+using ReShareBlazorApp.Web.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 

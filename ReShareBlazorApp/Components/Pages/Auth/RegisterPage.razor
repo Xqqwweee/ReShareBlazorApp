@@ -1,5 +1,5 @@
 ﻿@page "/register"
-@using ReShareBlazorApp.Models
+@using ReShareBlazorApp.Web.Models
 <EditForm Model="@registerModel" OnInvalidSubmit="Register">
     <DataAnnotationsValidator />
     <div class="register-container">
@@ -37,7 +37,7 @@
                 <ValidationMessage For="@(() => registerModel.ConfirmPassword)" />
             </div>
             <div class="register-terms">
-                <InputCheckbox @bind-Value="registerModel.AcceptTerms"/>
+                <InputCheckbox @bind-Value="registerModel.AcceptTerms" />
                 <label>Akceptuje regulamin.</label>
             </div>
             <ValidationMessage For="@(() => registerModel.AcceptTerms)" />

@@ -1,4 +1,4 @@
 <Solution>
   <Project Path="ReShareBlazorApp.Api/ReShareBlazorApp.Api.csproj" Id="c4fb1367-b576-4abc-afd5-54c6c68b2f21" />
-  <Project Path="ReShareBlazorApp/ReShareBlazorApp.csproj" />
+  <Project Path="ReShareBlazorApp/ReShareBlazorApp.Web.csproj" />
 </Solution>

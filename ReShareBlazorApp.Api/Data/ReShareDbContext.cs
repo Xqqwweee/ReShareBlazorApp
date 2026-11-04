@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
 
-namespace ReShareBlazorApp.Data
+namespace ReShareBlazorApp.Api.Data
 {
     public class ReShareDbContext : IdentityDbContext<User, IdentityRole<int>, int>
     {

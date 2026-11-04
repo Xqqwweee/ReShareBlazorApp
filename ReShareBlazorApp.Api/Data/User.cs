@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ReShareBlazorApp.Data
+namespace ReShareBlazorApp.Api.Data
 {
     public class User : IdentityUser<int>
     {

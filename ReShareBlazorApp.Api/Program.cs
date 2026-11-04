@@ -2,11 +2,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using ReShareBlazorApp.Data;
-using ReShareBlazorApp.Interfaces.Repositories;
-using ReShareBlazorApp.Interfaces.Services;
-using ReShareBlazorApp.Repositories;
-using ReShareBlazorApp.Services;
+using ReShareBlazorApp.Api.Data;
+using ReShareBlazorApp.Api.Interfaces.Repositories;
+using ReShareBlazorApp.Api.Interfaces.Services;
+using ReShareBlazorApp.Api.Repositories;
+using ReShareBlazorApp.Api.Services;
 using Scalar.AspNetCore;
 using System.Text;
 
@@ -73,8 +73,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 

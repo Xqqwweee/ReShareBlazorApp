@@ -1,6 +1,6 @@
-﻿using ReShareBlazorApp.Interfaces.Repositories;
+﻿using ReShareBlazorApp.Api.Interfaces.Repositories;
 
-namespace ReShareBlazorApp.Repositories
+namespace ReShareBlazorApp.Api.Repositories
 {
     public class AuthRepository : IAuthRepository
     {

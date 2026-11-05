@@ -1,66 +1,124 @@
 ﻿@page "/register"
 @inject AuthApiService authApi
+@rendermode InteractiveServer
+
 @using ReShareBlazorApp.Web.ApiServices
 @using ReShareBlazorApp.Web.Models
-<EditForm Model="@registerModel" OnInvalidSubmit="Register">
+
+<EditForm Model="@registerModel"
+          OnValidSubmit="Register"
+          FormName="register">
+
     <DataAnnotationsValidator />
-    <div class="register-container">
-        <div class="register-card">
-            <p>@Message</p>
-            <h2>Utwórz konto</h2>
-            <p>Wypełnij formularz, aby się zarejestrowac.</p>
-            <div class="register-field">
-                <label>Nazwa użytkownika</label>
-                <InputText @bind-Value="registerModel.Username"
-                           class="register-input"
-                           placeholder="Wpisz nazwę użytkownika" />
+
+    <div class="auth-container">
+        <div class="auth-card auth-card-register">
+
+            <a href="/" class="auth-brand">
+                re<span>share.</span>
+            </a>
+
+            <div class="auth-heading">
+                <h1>Utwórz konto</h1>
+                <p>Dołącz do społeczności Reshare.</p>
+            </div>
+
+            @if (!string.IsNullOrWhiteSpace(Message))
+            {
+                <div class="auth-message">
+                    @Message
+                </div>
+            }
+
+            <div class="auth-field">
+                <label for="register-username">Nazwa użytkownika</label>
+
+                <InputText id="register-username"
+                           @bind-Value="registerModel.Username"
+                           class="auth-input"
+                           placeholder="Wpisz nazwę użytkownika"
+                           autocomplete="username" />
+
                 <ValidationMessage For="@(() => registerModel.Username)" />
             </div>
-            <div class="register-field">
-                <label>E-mail</label>
-                <InputText @bind-Value="registerModel.Email"
-                           class="register-input"
-                           placeholder="Wpisz e-mail" />
+
+            <div class="auth-field">
+                <label for="register-email">Adres e-mail</label>
+
+                <InputText id="register-email"
+                           @bind-Value="registerModel.Email"
+                           class="auth-input"
+                           type="email"
+                           placeholder="Wpisz adres e-mail"
+                           autocomplete="email" />
+
                 <ValidationMessage For="@(() => registerModel.Email)" />
             </div>
-            <div class="register-field">
 
-                <label>Hasło</label>
-                <InputText @bind-Value="registerModel.Password"
-                           class="register-input"
-                           placeholder="Wpisz hasło" />
+            <div class="auth-field">
+                <label for="register-password">Hasło</label>
+
+                <InputText id="register-password"
+                           @bind-Value="registerModel.Password"
+                           class="auth-input"
+                           type="password"
+                           placeholder="Wpisz hasło"
+                           autocomplete="new-password" />
+
                 <ValidationMessage For="@(() => registerModel.Password)" />
             </div>
-            <div class="register-field">
 
-                <label>Potwierdź</label>
-                <InputText @bind-Value="registerModel.ConfirmPassword"
-                           class="register-input"
-                           placeholder="Potwierdź hasło." />
+            <div class="auth-field">
+                <label for="register-confirm-password">Potwierdź hasło</label>
+
+                <InputText id="register-confirm-password"
+                           @bind-Value="registerModel.ConfirmPassword"
+                           class="auth-input"
+                           type="password"
+                           placeholder="Powtórz hasło"
+                           autocomplete="new-password" />
+
                 <ValidationMessage For="@(() => registerModel.ConfirmPassword)" />
             </div>
-            <div class="register-terms">
-                <InputCheckbox @bind-Value="registerModel.AcceptTerms" />
-                <label>Akceptuje regulamin.</label>
+
+            <div class="auth-terms">
+                <InputCheckbox id="register-terms"
+                               @bind-Value="registerModel.AcceptTerms" />
+
+                <label for="register-terms">
+                    Akceptuję regulamin.
+                </label>
             </div>
+
             <ValidationMessage For="@(() => registerModel.AcceptTerms)" />
-            <button type="submit" class="register-button">
+
+            <button type="submit" class="auth-submit">
                 Zarejestruj się
             </button>
+
+            <div class="auth-footer">
+                Masz już konto?
+                <a href="/login">Zaloguj się</a>
+            </div>
+
         </div>
     </div>
 </EditForm>
 
 @code {
-    private RegisterModel registerModel = new RegisterModel();
+    private RegisterModel registerModel = new();
+
     private string Message { get; set; }
+
     private async Task Register()
     {
         var result = await authApi.RegisterAsync(registerModel);
-        if(result is null)
+
+        if (result is null)
         {
             return;
         }
+
         Message = result.Message;
     }
 }

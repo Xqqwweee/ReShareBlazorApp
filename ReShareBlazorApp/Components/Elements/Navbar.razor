@@ -1,34 +1,33 @@
 ﻿@using System.Security.Claims
 @using Microsoft.AspNetCore.Components.Authorization
 
-<nav class="navbar navbar-expand bg-1">
+<nav class="navbar">
     <div class="container-fluid">
 
-        <a class="navbar-brand" href="#">
-            <span class="brand-icon">N</span>
-            <span>Navbar</span>
+        <a class="navbar-brand" href="/">
+            re<span>share.</span>
         </a>
 
-        <ul class="nav navbar-nav main-nav">
+        <ul class="main-nav">
 
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="/">
                     <i class="bi bi-house-door"></i>
-                    Home
+                    <span>Strona główna</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="bi bi-compass"></i>
-                    Discover
+                    <span>Odkrywaj</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="bi bi-chat-dots"></i>
-                    Messages
+                    <span>Wiadomości</span>
                     <span class="notification-dot"></span>
                 </a>
             </li>
@@ -36,13 +35,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="bi bi-person"></i>
-                    Profile
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">
-                    <i class="bi bi-person"></i>
-                    Log in
+                    <span>Profil</span>
                 </a>
             </li>
 
@@ -51,17 +44,34 @@
         <form class="search-box" role="search">
             <i class="bi bi-search search-icon"></i>
 
-            <button class="navbar-search-button" type="submit">
-                <svg width="18" height="18">
-                    <use href="#search"/>
-                </svg>
-            </button>
+            <input type="search"
+                   placeholder="Szukaj..."
+                   aria-label="Szukaj" />
+
+            <span class="search-shortcut">/</span>
+        </form>
+
+        <div class="navbar-actions">
+
             <AuthorizeView>
                 <Authorized Context="auth">
-                    <p>@auth.User.FindFirst(ClaimTypes.Email)?.Value</p>
+                    <span class="navbar-email">
+                        @auth.User.FindFirst(ClaimTypes.Email)?.Value
+                    </span>
                 </Authorized>
+
+                <NotAuthorized>
+                    <a href="/login" class="navbar-login">
+                        Zaloguj się
+                    </a>
+
+                    <a href="/register" class="navbar-register">
+                        Zarejestruj się
+                    </a>
+                </NotAuthorized>
             </AuthorizeView>
-        </form>
+
+        </div>
 
     </div>
 </nav>

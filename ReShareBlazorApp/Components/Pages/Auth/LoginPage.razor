@@ -1,38 +1,58 @@
 ﻿@page "/login"
 @using ReShareBlazorApp.Web.Models
 @rendermode InteractiveServer
-@inject NavigationManager NavigationManager
+@inject NavigationManager nav
 
-<h3>LoginPage</h3>
+<div class="auth-container">
+    <div class="auth-card">
 
-<EditForm Model="@LoginModel">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+        <a href="/" class="auth-brand">
+            re<span>share.</span>
+        </a>
 
-    <div class="login-card">
-        <div class="login-label">
-            <label>E-mail</label>
-            <InputText @bind-Value="LoginModel.Email" placeholder="Wpisz e-mail!" />
-            <ValidationMessage For="() => LoginModel.Email" />
-        </div>
-        <div class="login-label">
-            <label>E-mail</label>
-            <InputText @bind-Value="LoginModel.Password" placeholder="Wpisz hasło!" />
-            <ValidationMessage For="() => LoginModel.Password" />
+        <div class="auth-heading">
+            <h1>Witaj ponownie</h1>
+            <p>Zaloguj się na swoje konto.</p>
         </div>
 
+        <form method="post" action="/auth/login">
+            <AntiforgeryToken />
 
-        <button type="submit" class="login-button">Zaloguj się</button>
+            <div class="auth-field">
+                <label for="login-email">Adres e-mail</label>
+
+                <input id="login-email"
+                       name="Email"
+                       type="email"
+                       placeholder="Wpisz adres e-mail"
+                       autocomplete="email"
+                       required />
+            </div>
+
+            <div class="auth-field">
+                <label for="login-password">Hasło</label>
+
+                <input id="login-password"
+                       name="Password"
+                       type="password"
+                       placeholder="Wpisz hasło"
+                       autocomplete="current-password"
+                       required />
+            </div>
+
+            <button class="auth-submit" type="submit">
+                Zaloguj się
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            Nie masz jeszcze konta?
+            <a href="/register">Zarejestruj się</a>
+        </div>
+
     </div>
-</EditForm>
-
-<hr />
-
-<button class="register-button" @onclick='() => NavigationManager.NavigateTo("/register")'>
-    Utwórz konto
-</button>
+</div>
 
 @code {
     public LoginModel LoginModel { get; set; } = new();
-
 }

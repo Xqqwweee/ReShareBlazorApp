@@ -1,4 +1,6 @@
-﻿
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Components.Authorization
+
 <nav class="navbar navbar-expand bg-1">
     <div class="container-fluid">
 
@@ -49,11 +51,16 @@
         <form class="search-box" role="search">
             <i class="bi bi-search search-icon"></i>
 
-            <input type="search"
-                   placeholder="Search..."
-                   aria-label="Search" />
-
-            <span class="search-shortcut">O</span>
+            <button class="navbar-search-button" type="submit">
+                <svg width="18" height="18">
+                    <use href="#search"/>
+                </svg>
+            </button>
+            <AuthorizeView>
+                <Authorized Context="auth">
+                    <p>@auth.User.FindFirst(ClaimTypes.Email)?.Value</p>
+                </Authorized>
+            </AuthorizeView>
         </form>
 
     </div>

@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
-using ReShareBlazorApp.Api.DTOs;
 using ReShareBlazorApp.Api.Interfaces.Services;
+using ReShareBlazorApp.Shared.DTOs;
 
 namespace ReShareBlazorApp.Api.Controllers
 {

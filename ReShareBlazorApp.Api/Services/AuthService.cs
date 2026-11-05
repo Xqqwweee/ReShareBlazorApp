@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ReShareBlazorApp.Api.Data;
-using ReShareBlazorApp.Api.DTOs;
 using ReShareBlazorApp.Api.Interfaces.Services;
+using ReShareBlazorApp.Shared.DTOs;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

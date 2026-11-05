@@ -1,4 +1,4 @@
-﻿namespace ReShareBlazorApp.Api.DTOs
+﻿namespace ReShareBlazorApp.Shared.DTOs
 {
     public class RegisterResponse
     {

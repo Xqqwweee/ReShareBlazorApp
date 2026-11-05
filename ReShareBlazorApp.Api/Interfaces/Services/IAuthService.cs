@@ -1,4 +1,4 @@
-﻿using ReShareBlazorApp.Api.DTOs;
+﻿using ReShareBlazorApp.Shared.DTOs;
 
 namespace ReShareBlazorApp.Api.Interfaces.Services
 {

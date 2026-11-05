@@ -1,22 +1,38 @@
 ﻿@page "/login"
+@using ReShareBlazorApp.Web.Models
 @rendermode InteractiveServer
 @inject NavigationManager NavigationManager
 
-<div class="login-container">
+<h3>LoginPage</h3>
+
+<EditForm Model="@LoginModel">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
     <div class="login-card">
+        <div class="login-label">
+            <label>E-mail</label>
+            <InputText @bind-Value="LoginModel.Email" placeholder="Wpisz e-mail!" />
+            <ValidationMessage For="() => LoginModel.Email" />
+        </div>
+        <div class="login-label">
+            <label>E-mail</label>
+            <InputText @bind-Value="LoginModel.Password" placeholder="Wpisz hasło!" />
+            <ValidationMessage For="() => LoginModel.Password" />
+        </div>
 
-        <h2>Witaj ponownie!</h2>
 
-        <p>Zaloguj się do swojego konta ReShare.</p>
-
-        <button class="login-button"
-                @onclick='() => NavigationManager.NavigateTo("/register")'>
-            Utwórz konto
-        </button>
-
+        <button type="submit" class="login-button">Zaloguj się</button>
     </div>
-</div>
+</EditForm>
+
+<hr />
+
+<button class="register-button" @onclick='() => NavigationManager.NavigateTo("/register")'>
+    Utwórz konto
+</button>
 
 @code {
+    public LoginModel LoginModel { get; set; } = new();
 
 }

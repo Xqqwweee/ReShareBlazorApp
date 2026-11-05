@@ -1,9 +1,12 @@
 ﻿@page "/register"
+@inject AuthApiService authApi
+@using ReShareBlazorApp.Web.ApiServices
 @using ReShareBlazorApp.Web.Models
 <EditForm Model="@registerModel" OnInvalidSubmit="Register">
     <DataAnnotationsValidator />
     <div class="register-container">
         <div class="register-card">
+            <p>@Message</p>
             <h2>Utwórz konto</h2>
             <p>Wypełnij formularz, aby się zarejestrowac.</p>
             <div class="register-field">
@@ -50,8 +53,14 @@
 
 @code {
     private RegisterModel registerModel = new RegisterModel();
+    private string Message { get; set; }
     private async Task Register()
     {
-
+        var result = await authApi.RegisterAsync(registerModel);
+        if(result is null)
+        {
+            return;
+        }
+        Message = result.Message;
     }
 }

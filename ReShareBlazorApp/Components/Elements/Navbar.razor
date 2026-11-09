@@ -1,73 +1,97 @@
-﻿@using System.Security.Claims
+﻿
+@using System.Security.Claims
 @using Microsoft.AspNetCore.Components.Authorization
 
-<nav class="navbar">
+<nav class="navbar navbar-expand bg-1">
     <div class="container-fluid">
 
         <a class="navbar-brand" href="/">
-            re<span>share.</span>
-        </a>
+    <span>re<span class="brand-accent">share.</span></span>
+</a>
 
-        <ul class="main-nav">
+        <ul class="nav navbar-nav main-nav">
 
             <li class="nav-item">
-                <a class="nav-link active" href="/">
+                <a class="nav-link" href="/">
                     <i class="bi bi-house-door"></i>
-                    <span>Strona główna</span>
+                    Strona główna
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-compass"></i>
-                    <span>Odkrywaj</span>
+                <a class="nav-link" href="/tickets">
+                    <i class="bi bi-ticket-perforated"></i>
+                    Bilety
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/messages">
                     <i class="bi bi-chat-dots"></i>
-                    <span>Wiadomości</span>
+                    Wiadomości
                     <span class="notification-dot"></span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/profile">
                     <i class="bi bi-person"></i>
-                    <span>Profil</span>
+                    Profil
                 </a>
             </li>
 
         </ul>
 
-        <form class="search-box" role="search">
-            <i class="bi bi-search search-icon"></i>
+        <div class="navbar-right">
 
-            <input type="search"
-                   placeholder="Szukaj..."
-                   aria-label="Szukaj" />
+            <form class="search-box" role="search">
+                <i class="bi bi-search search-icon"></i>
 
-            <span class="search-shortcut">/</span>
-        </form>
+                <input type="search"
+                       placeholder="Szukaj wydarzeń..."
+                       aria-label="Szukaj wydarzeń" />
 
-        <div class="navbar-actions">
+            </form>
 
             <AuthorizeView>
                 <Authorized Context="auth">
-                    <span class="navbar-email">
-                        @auth.User.FindFirst(ClaimTypes.Email)?.Value
-                    </span>
+
+                    <div class="navbar-auth">
+
+                        <div class="navbar-user">
+                            <i class="bi bi-person-circle"></i>
+                            <span>
+                                @(auth.User.FindFirst(ClaimTypes.Email)?.Value
+                                    ?? auth.User.FindFirst("email")?.Value
+                                    ?? "Użytkownik")
+                            </span>
+                        </div>
+
+                        <form method="post" action="/auth/logout">
+                            <AntiforgeryToken />
+
+                            <button type="submit" class="navbar-logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                                Wyloguj się
+                            </button>
+                        </form>
+
+                    </div>
+
                 </Authorized>
 
                 <NotAuthorized>
-                    <a href="/login" class="navbar-login">
-                        Zaloguj się
-                    </a>
 
-                    <a href="/register" class="navbar-register">
-                        Zarejestruj się
-                    </a>
+                    <div class="navbar-auth">
+                        <a href="/login" class="navbar-login">
+                            Zaloguj się
+                        </a>
+
+                        <a href="/register" class="navbar-register">
+                            Zarejestruj się
+                        </a>
+                    </div>
+
                 </NotAuthorized>
             </AuthorizeView>
 

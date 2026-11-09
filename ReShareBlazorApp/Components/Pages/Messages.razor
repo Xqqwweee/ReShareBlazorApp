@@ -1,0 +1,193 @@
+﻿@page "/messages"
+
+<PageTitle>Wiadomości — Reshare</PageTitle>
+
+<div class="messages-page">
+
+    <div class="messages-header">
+        <div>
+            <span class="messages-eyebrow">KOMUNIKACJA</span>
+            <h1>Wiadomości</h1>
+            <p>Rozmawiaj ze sprzedającymi i kupującymi.</p>
+        </div>
+
+        <div class="messages-header-count">
+            <span class="messages-count-dot"></span>
+            2 nieprzeczytane
+        </div>
+    </div>
+
+    <section class="messages-container">
+
+        <aside class="messages-sidebar">
+
+            <div class="messages-sidebar-header">
+                <h2>Rozmowy</h2>
+                <span>4</span>
+            </div>
+
+            <div class="messages-search">
+                <i class="bi bi-search"></i>
+                <input type="search" placeholder="Szukaj rozmowy..." />
+            </div>
+
+            <div class="conversation-list">
+
+                <div class="conversation-item active">
+                    <div class="conversation-avatar">
+                        MK
+                        <span class="avatar-online"></span>
+                    </div>
+
+                    <div class="conversation-info">
+                        <div class="conversation-top">
+                            <strong>Mateusz Kowalski</strong>
+                            <small>14:32</small>
+                        </div>
+                        <div class="conversation-bottom">
+                            <p>Czy bilet jest jeszcze dostępny?</p>
+                            <span class="conversation-unread">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conversation-item">
+                    <div class="conversation-avatar avatar-purple">
+                        AN
+                    </div>
+
+                    <div class="conversation-info">
+                        <div class="conversation-top">
+                            <strong>Anna Nowak</strong>
+                            <small>Wczoraj</small>
+                        </div>
+                        <div class="conversation-bottom">
+                            <p>Dziękuję za zakup!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conversation-item">
+                    <div class="conversation-avatar avatar-blue">
+                        PK
+                    </div>
+
+                    <div class="conversation-info">
+                        <div class="conversation-top">
+                            <strong>Piotr Kamiński</strong>
+                            <small>Wt.</small>
+                        </div>
+                        <div class="conversation-bottom">
+                            <p>Możemy dogadać się co do ceny.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conversation-item">
+                    <div class="conversation-avatar avatar-orange">
+                        JS
+                    </div>
+
+                    <div class="conversation-info">
+                        <div class="conversation-top">
+                            <strong>Julia Szymańska</strong>
+                            <small>12.11</small>
+                        </div>
+                        <div class="conversation-bottom">
+                            <p>Wysłałam szczegóły wydarzenia.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <section class="chat-window">
+
+            <header class="chat-header">
+                <div class="chat-user">
+                    <div class="conversation-avatar">
+                        MK
+                        <span class="avatar-online"></span>
+                    </div>
+
+                    <div>
+                        <strong>Mateusz Kowalski</strong>
+                        <span><i></i> Aktywny teraz</span>
+                    </div>
+                </div>
+
+                <button type="button" class="chat-more" aria-label="Więcej opcji">
+                    <i class="bi bi-three-dots"></i>
+                </button>
+            </header>
+
+            <div class="chat-ticket-reference">
+                <div class="chat-ticket-icon">
+                    <i class="bi bi-ticket-perforated"></i>
+                </div>
+
+                <div>
+                    <small>ROZMOWA DOTYCZY OFERTY</small>
+                    <strong>THE WEEKND — After Hours</strong>
+                    <span>Warszawa · 18.12.2026</span>
+                </div>
+
+                <strong class="chat-ticket-price">450 zł</strong>
+            </div>
+
+            <div class="chat-messages">
+
+                <div class="chat-date-divider">
+                    <span>Dzisiaj</span>
+                </div>
+
+                <div class="chat-message received">
+                    <div class="message-avatar">MK</div>
+                    <div>
+                        <div class="message-bubble">
+                            Cześć! Zainteresował mnie Twój bilet na The Weeknd. Czy jest jeszcze dostępny?
+                        </div>
+                        <small>14:28</small>
+                    </div>
+                </div>
+
+                <div class="chat-message sent">
+                    <div>
+                        <div class="message-bubble">
+                            Hej! Tak, oferta jest nadal aktualna.
+                        </div>
+                        <small>14:30 <i class="bi bi-check2-all"></i></small>
+                    </div>
+                </div>
+
+                <div class="chat-message received">
+                    <div class="message-avatar">MK</div>
+                    <div>
+                        <div class="message-bubble">
+                            Super! Czy cena podlega negocjacji?
+                        </div>
+                        <small>14:32</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="chat-input-area">
+                <button type="button" aria-label="Dodaj załącznik">
+                    <i class="bi bi-paperclip"></i>
+                </button>
+
+                <input type="text" placeholder="Napisz wiadomość..." />
+
+                <button type="button" class="chat-send" aria-label="Wyślij wiadomość">
+                    <i class="bi bi-arrow-up"></i>
+                </button>
+            </div>
+
+        </section>
+
+    </section>
+
+</div>

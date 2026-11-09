@@ -1,4 +1,269 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Reshare — Marketplace biletów</PageTitle>
 
+<div class="home-page">
+
+    <!-- HERO -->
+    <section class="home-hero">
+        <div class="home-hero-content">
+
+            <div class="home-eyebrow">
+                <span class="home-eyebrow-dot"></span>
+                MARKETPLACE BILETÓW
+            </div>
+
+            <h1>
+                Nie możesz iść?<br />
+                <span>Podaj bilet dalej.</span>
+            </h1>
+
+            <p class="home-description">
+                Plany się zmieniają. Dobre wydarzenia zostają.
+                Znajdź kupca na swój bilet albo przejmij miejsce
+                od kogoś, kto nie może już uczestniczyć.
+            </p>
+
+            <form class="home-search" action="/tickets" method="get">
+                <i class="bi bi-search"></i>
+                <input type="search"
+                       name="search"
+                       placeholder="Wpisz nazwę wydarzenia lub miasto..." />
+                <button type="submit">Szukaj biletów</button>
+            </form>
+
+            <div class="home-hero-links">
+                <span>Popularne:</span>
+                <a href="/tickets?category=concert">Koncerty</a>
+                <a href="/tickets?category=festival">Festiwale</a>
+                <a href="/tickets?category=sport">Sport</a>
+            </div>
+
+        </div>
+
+        <div class="home-hero-side">
+            <div class="hero-side-card">
+                <div class="hero-side-top">
+                    <span class="hero-side-label">WARTO ZOBACZYĆ</span>
+                    <span class="hero-live-dot"></span>
+                </div>
+
+                <div class="hero-side-image">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900"
+                         alt="Koncert na żywo" />
+                    <span class="hero-image-category">KONCERT</span>
+                </div>
+
+                <div class="hero-side-info">
+                    <div>
+                        <h3>Live music. Real moments.</h3>
+                        <p>Odkryj wydarzenia, na które warto się wybrać.</p>
+                    </div>
+                    <a href="/tickets" aria-label="Przeglądaj bilety">
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-side-note">
+                <i class="bi bi-ticket-perforated"></i>
+                <span>Drugie życie Twojego biletu.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="home-stats">
+        <div class="home-stat">
+            <strong>2 400<span>+</span></strong>
+            <small>Sprzedanych biletów</small>
+        </div>
+
+        <div class="home-stat-divider"></div>
+
+        <div class="home-stat">
+            <strong>850<span>+</span></strong>
+            <small>Aktywnych ofert</small>
+        </div>
+
+        <div class="home-stat-divider"></div>
+
+        <div class="home-stat">
+            <strong>120<span>+</span></strong>
+            <small>Nadchodzących wydarzeń</small>
+        </div>
+
+        <div class="home-stat-divider"></div>
+
+        <div class="home-stat">
+            <strong>24/7</strong>
+            <small>Dostęp do ofert</small>
+        </div>
+    </section>
+
+    <!-- TICKETS -->
+    <section class="home-tickets">
+
+        <div class="home-section-header">
+            <div>
+                <span class="home-section-label">ODKRYJ OFERTY</span>
+                <h2>Bilety, które czekają na Ciebie.</h2>
+                <p>Sprawdź, na jakie wydarzenia możesz wybrać się już niedługo.</p>
+            </div>
+
+            <a href="/tickets" class="home-view-all">
+                Wszystkie oferty
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="home-ticket-grid">
+
+            <article class="home-ticket">
+                <a href="/tickets" class="home-ticket-image">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+                         alt="Koncert The Weeknd" />
+                    <span class="home-ticket-category">KONCERT</span>
+                </a>
+
+                <div class="home-ticket-body">
+                    <div class="home-ticket-meta">
+                        <span><i class="bi bi-calendar3"></i> 18.12.2026</span>
+                        <span><i class="bi bi-geo-alt"></i> Warszawa</span>
+                    </div>
+
+                    <h3>THE WEEKND — After Hours</h3>
+
+                    <div class="home-ticket-bottom">
+                        <div>
+                            <small>CENA OFERTY</small>
+                            <strong>450 zł</strong>
+                        </div>
+                        <a href="/tickets" class="home-ticket-link">
+                            Zobacz <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="home-ticket">
+                <a href="/tickets" class="home-ticket-image">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800"
+                         alt="Open'er Festival" />
+                    <span class="home-ticket-category">FESTIWAL</span>
+                </a>
+
+                <div class="home-ticket-body">
+                    <div class="home-ticket-meta">
+                        <span><i class="bi bi-calendar3"></i> 02.07.2027</span>
+                        <span><i class="bi bi-geo-alt"></i> Gdynia</span>
+                    </div>
+
+                    <h3>Open'er Festival 2027</h3>
+
+                    <div class="home-ticket-bottom">
+                        <div>
+                            <small>CENA OFERTY</small>
+                            <strong>690 zł</strong>
+                        </div>
+                        <a href="/tickets" class="home-ticket-link">
+                            Zobacz <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="home-ticket">
+                <a href="/tickets" class="home-ticket-image">
+                    <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800"
+                         alt="Quebonafide Tour" />
+                    <span class="home-ticket-category">KONCERT</span>
+                </a>
+
+                <div class="home-ticket-body">
+                    <div class="home-ticket-meta">
+                        <span><i class="bi bi-calendar3"></i> 21.11.2026</span>
+                        <span><i class="bi bi-geo-alt"></i> Kraków</span>
+                    </div>
+
+                    <h3>Quebonafide — Tour</h3>
+
+                    <div class="home-ticket-bottom">
+                        <div>
+                            <small>CENA OFERTY</small>
+                            <strong>220 zł</strong>
+                        </div>
+                        <a href="/tickets" class="home-ticket-link">
+                            Zobacz <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SELL BANNER -->
+    <section class="home-sell">
+        <div class="home-sell-content">
+            <span class="home-section-label">MASZ BILET?</span>
+            <h2>Plany się zmieniły?<br />Nie pozwól, żeby bilet się zmarnował.</h2>
+            <p>
+                Wystaw swoją ofertę na Reshare i znajdź osobę,
+                która z przyjemnością zajmie Twoje miejsce.
+            </p>
+
+            <a href="/tickets" class="home-sell-button">
+                Wystaw swój bilet
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+        </div>
+
+        <div class="home-sell-decoration">
+            <i class="bi bi-ticket-perforated"></i>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="home-how">
+        <div class="home-section-header">
+            <div>
+                <span class="home-section-label">PROSTO I WYGODNIE</span>
+                <h2>Jak działa Reshare?</h2>
+                <p>Cały proces bez zbędnych komplikacji.</p>
+            </div>
+        </div>
+
+        <div class="home-steps">
+
+            <div class="home-step">
+                <span class="home-step-number">01</span>
+                <div class="home-step-icon">
+                    <i class="bi bi-search"></i>
+                </div>
+                <h3>Znajdź wydarzenie</h3>
+                <p>Przeglądaj dostępne bilety i wybierz wydarzenie, które Cię interesuje.</p>
+            </div>
+
+            <div class="home-step">
+                <span class="home-step-number">02</span>
+                <div class="home-step-icon">
+                    <i class="bi bi-ticket-perforated"></i>
+                </div>
+                <h3>Wybierz ofertę</h3>
+                <p>Sprawdź szczegóły, cenę i informacje dotyczące wystawionego biletu.</p>
+            </div>
+
+            <div class="home-step">
+                <span class="home-step-number">03</span>
+                <div class="home-step-icon">
+                    <i class="bi bi-music-note-beamed"></i>
+                </div>
+                <h3>Przeżyj wydarzenie</h3>
+                <p>Znajdź swoje miejsce i ciesz się wydarzeniem, na którym chcesz być.</p>
+            </div>
+
+        </div>
+    </section>
+
+</div>
